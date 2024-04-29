@@ -2,8 +2,8 @@ import tkinter as tk
 import random
 import string
 
-def generate_password():
 
+def generate_password():
     password_length = random.randrange(1, 16)
 
     password_characters = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
@@ -12,6 +12,7 @@ def generate_password():
 
     password_entry.delete(0, tk.END)
     password_entry.insert(0, password)
+
 
 root = tk.Tk()
 root.title("Генератор паролей")
