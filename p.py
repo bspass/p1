@@ -1,6 +1,6 @@
 import tkinter as tk
 import random
-import string
+import string   # проверка
 
 
 def generate_password():
