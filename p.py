@@ -22,6 +22,9 @@ root = tk.Tk()
 root.title("Генератор паролей")  # Устанавливаем заголовок окна
 
 # Создаем кнопку для запуска функции генерации пароля.
+length_label = tk.Label(root, text="Длина пароля:")
+length_label.grid(row=0, column=0, padx=10, pady=10)
+length_entry = tk.Entry(root)
 generate_button = tk.Button(root, text="Генерировать", command=generate_password)   # Кнопка запуска генерации пароля.
 generate_button.grid(row=5, column=0, columnspan=2, padx=10, pady=10)   # Размещаем кнопку в сетке.
 
