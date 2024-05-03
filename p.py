@@ -5,7 +5,7 @@ import string   # Импортируем модуль string, который с�
 
 def generate_password():    # Определяем функцию для генерации пароля.
     # Получаем длину пароля из поля ввода, преобразуя ввод в целое число.
-    password_length = random.randrange(1, 16)
+    password_length = int(length_entry.get())
     # Инициализируем пустую строку для возможных символов пароля.
     password_characters = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
 
@@ -23,7 +23,6 @@ root.title("Генератор паролей")  # Устанавливаем з
 
 # Создаем кнопку для запуска функции генерации пароля.
 length_label = tk.Label(root, text="Длина пароля:")
-length_label.grid(row=0, column=0, padx=10, pady=10)
 length_entry = tk.Entry(root)
 length_entry.grid(row=0, column=1, padx=10, pady=10)
 generate_button = tk.Button(root, text="Генерировать", command=generate_password)   # Кнопка запуска генерации пароля.
