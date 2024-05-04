@@ -28,6 +28,23 @@ length_label.grid(row=0, column=0, padx=10, pady=10)  # Размещаем ме�
 length_entry = tk.Entry(root)  # Поле ввода для длины пароля.
 length_entry.grid(row=0, column=1, padx=10, pady=10)  # Размещаем поле для ввода длины строки.
 
+
+include_lowercase = tk.BooleanVar()
+lowercase_checkbox = tk.Checkbutton(root, text="Прописные буквы", variable=include_lowercase)
+lowercase_checkbox.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+
+include_uppercase = tk.BooleanVar()
+uppercase_checkbox = tk.Checkbutton(root, text="Заглавные буквы", variable=include_uppercase)
+uppercase_checkbox.grid(row=2, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+
+include_digits = tk.BooleanVar()
+digits_checkbox = tk.Checkbutton(root, text="Цифры", variable=include_digits)
+digits_checkbox.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+
+include_special = tk.BooleanVar()
+special_checkbox = tk.Checkbutton(root, text="Спец. символы", variable=include_special)
+special_checkbox.grid(row=4, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+
 # Создаем кнопку для запуска функции генерации пароля.
 generate_button = tk.Button(root, text="Генерировать", command=generate_password)  # Кнопка запуска генерации пароля.
 generate_button.grid(row=5, column=0, columnspan=2, padx=10, pady=10)  # Размещаем кнопку в сетке.
