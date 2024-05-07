@@ -8,14 +8,14 @@ def generate_password():  # Определяем функцию для гене�
     password_length = int(length_entry.get())
     # Инициализируем пустую строку для возможных символов пароля.
     password_characters = ""
-
-    if include_lowercase.get():
+    # Проверяем, какие типы символов выбраны пользователем через чекбоксы.
+    if include_lowercase.get():  # Если выбраны строчные буквы, добавляем их в возможные символы.
         password_characters += string.ascii_lowercase
-    if include_uppercase.get():
+    if include_uppercase.get():  # Если выбраны прописные буквы, добавляем их в возможные символы.
         password_characters += string.ascii_uppercase
-    if include_digits.get():
+    if include_digits.get():  # Если выбраны цифры, добавляем их в возможные символы.
         password_characters += string.digits
-    if include_special.get():
+    if include_special.get():  # Если выбраны специальные символы, добавляем их в возможные символы.
         password_characters += string.punctuation
 
     # Генерируем пароль заданной длины, используя случайные символы из выбранных типов.
@@ -37,21 +37,22 @@ length_label.grid(row=0, column=0, padx=10, pady=10)  # Размещаем ме�
 length_entry = tk.Entry(root)  # Поле ввода для длины пароля.
 length_entry.grid(row=0, column=1, padx=10, pady=10)  # Размещаем поле для ввода длины строки.
 
-include_lowercase = tk.BooleanVar()
-lowercase_checkbox = tk.Checkbutton(root, text="Прописные буквы", variable=include_lowercase)
-lowercase_checkbox.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+# Создаем чекбоксы для выбора типов символов.
+include_lowercase = tk.BooleanVar()  # Переменная для отслеживания состояния чекбокса строчных букв.
+lowercase_checkbox = tk.Checkbutton(root, text="Прописные буквы", variable=include_lowercase)  # Создаем чекбокс.
+lowercase_checkbox.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке, ориентируем по левому краю.
 
-include_uppercase = tk.BooleanVar()
-uppercase_checkbox = tk.Checkbutton(root, text="Заглавные буквы", variable=include_uppercase)
-uppercase_checkbox.grid(row=2, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+include_uppercase = tk.BooleanVar()  # Переменная для чекбокса прописных букв.
+uppercase_checkbox = tk.Checkbutton(root, text="Заглавные буквы", variable=include_uppercase)  # Чекбокс для строчных букв.
+uppercase_checkbox.grid(row=2, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке.
 
-include_digits = tk.BooleanVar()
-digits_checkbox = tk.Checkbutton(root, text="Цифры", variable=include_digits)
-digits_checkbox.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+include_digits = tk.BooleanVar()  # Переменная для чекбокса с цифрами.
+digits_checkbox = tk.Checkbutton(root, text="Цифры", variable=include_digits)  # Чекбокс для цифр.
+digits_checkbox.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке.
 
-include_special = tk.BooleanVar()
-special_checkbox = tk.Checkbutton(root, text="Спец. символы", variable=include_special)
-special_checkbox.grid(row=4, column=0, columnspan=2, padx=10, pady=5, sticky="w")
+include_special = tk.BooleanVar()  # Переменная для чекбокса специальных символов.
+special_checkbox = tk.Checkbutton(root, text="Спец. символы", variable=include_special)  # Чекбокс для специальных символов.
+special_checkbox.grid(row=4, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке.
 
 # Создаем кнопку для запуска функции генерации пароля.
 generate_button = tk.Button(root, text="Генерировать", command=generate_password)  # Кнопка запуска генерации пароля.
