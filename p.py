@@ -59,16 +59,16 @@ validate_command = (root.register(only_numbers), '%S')
 # Метка и поле ввода для длины пароля.
 length_label = tk.Label(root, text="Длина пароля:")  # Метка с текстом.
 length_label.grid(row=0, column=0, padx=10, pady=10)  # Размещаем метку в сетке с отступами.
-length_entry = ttk.Entry(root, validate="key", validatecommand=validate_command, width=10)  # Поле ввода для длины пароля.
+length_entry = ttk.Entry(root, validate="key", validatecommand=validate_command, width=10)  # Поле ввода длины пароля.
 length_entry.grid(row=0, column=1, padx=10, pady=10)  # Размещаем поле для ввода длины строки.
 
 # Создаем чекбоксы для выбора типов символов.
 include_lowercase = tk.BooleanVar()  # Переменная для отслеживания состояния чекбокса строчных букв.
 lowercase_checkbox = tk.Checkbutton(root, text="Прописные буквы", variable=include_lowercase)  # Создаем чекбокс.
-lowercase_checkbox.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке, ориентируем по левому краю.
+lowercase_checkbox.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке, лев. край.
 
 include_uppercase = tk.BooleanVar()  # Переменная для чекбокса прописных букв.
-uppercase_checkbox = tk.Checkbutton(root, text="Заглавные буквы", variable=include_uppercase)  # Чекбокс для строчных букв.
+uppercase_checkbox = tk.Checkbutton(root, text="Заглавные буквы", variable=include_uppercase)  # Чекбокс строч. букв.
 uppercase_checkbox.grid(row=2, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке.
 
 include_digits = tk.BooleanVar()  # Переменная для чекбокса с цифрами.
@@ -76,7 +76,7 @@ digits_checkbox = tk.Checkbutton(root, text="Цифры", variable=include_digit
 digits_checkbox.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке.
 
 include_special = tk.BooleanVar()  # Переменная для чекбокса специальных символов.
-special_checkbox = tk.Checkbutton(root, text="Спец. символы", variable=include_special)  # Чекбокс для специальных символов.
+special_checkbox = tk.Checkbutton(root, text="Спец. символы", variable=include_special)  # Чекбокс для спец. символов.
 special_checkbox.grid(row=4, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Размещаем в сетке.
 
 # Создаем кнопку для запуска функции генерации пароля.
